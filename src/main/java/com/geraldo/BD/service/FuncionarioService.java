@@ -52,4 +52,10 @@ public class FuncionarioService {
     public List<Funcionario> findBySalariomaiorQue(Double salario){
         return funcionarioRepository.findBySalarioBigger(salario);
     }
+    public List<Funcionario> findBySalariomaiorQueQueryNative(Double salario){
+        return funcionarioRepository.findBySalarioBiggerQueryNative(salario);
+    }
+    public List<Funcionario> findByQtdDependentes(Integer qtd){
+        return funcionarioRepository.findByQtdDependentes(qtd);
+    }
 }

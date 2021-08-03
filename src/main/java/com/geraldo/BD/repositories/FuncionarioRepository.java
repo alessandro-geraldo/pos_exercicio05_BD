@@ -29,4 +29,10 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario,Long> {
 
    @Query("select f from Funcionario f where f.salario > ?1")
    List<Funcionario> findBySalarioBigger(Double salario);
+
+   @Query(value = "select * from funcionario where salario > ?1", nativeQuery = true)
+   List<Funcionario> findBySalarioBiggerQueryNative(Double salario);
+
+   @Query(name = "Funcionario.ByQtdDependentes")
+   List<Funcionario> findByQtdDependentes(Integer qtd);
 }

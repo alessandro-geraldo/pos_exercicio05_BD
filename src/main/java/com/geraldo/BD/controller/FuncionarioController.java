@@ -59,5 +59,14 @@ public class FuncionarioController {
     public List<Funcionario> findBySalarioMaiorQue(@PathVariable Double salario){
         return funcionarioService.findBySalariomaiorQue(salario);
     }
+    @GetMapping("/maior_que_qn:{salario}")
+    public List<Funcionario> findBySalarioMaiorQueQueryNative(@PathVariable Double salario){
+        return funcionarioService.findBySalariomaiorQueQueryNative(salario);
+    }
+    @GetMapping("/qtdDependentes:{qtd}")
+    public List<Funcionario> findByQtdDependentes(@PathVariable Integer qtd){
+        return funcionarioService.findByQtdDependentes(qtd);
+    }
+
 
 }

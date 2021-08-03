@@ -1,9 +1,13 @@
 package com.geraldo.BD.model;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Funcionario")
+@NamedQuery(name = "Funcionario.byQtdDependentes",
+             query = "from Funcionario f where f.qtdDependentes = ?1")
 public class Funcionario {
 
     @Id
@@ -11,8 +15,8 @@ public class Funcionario {
     private Long codFuncionario;
     @Column(name = "Nome",length = 80, nullable = false)
     private String nome;
-    @Column(name = "Dependentes",length = 10,nullable = false)
-    private int qtdDependentes;
+    @Column(name = "qtdDependentes",length = 10,nullable = false)
+    private Integer qtdDependentes;
     @Column(name = "Cargo",length = 30, nullable = false)
     private String cargo;
     @Column(length = 20,nullable = false)
