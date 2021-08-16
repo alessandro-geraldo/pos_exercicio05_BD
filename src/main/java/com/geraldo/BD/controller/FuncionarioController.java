@@ -80,4 +80,8 @@ public class FuncionarioController {
     public List<Funcionario> findByNomeFuncionario(@PathVariable String nome){
         return funcionarioService.findByNomeFuncionario(nome);
     }
+    @PutMapping("/funcionario_aumento:{aumento}")
+    public void funcionarioAumento(@PathVariable Integer aumento){
+        funcionarioService.funcionarioAumento(aumento);
+    }
 }

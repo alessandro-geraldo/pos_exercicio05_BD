@@ -40,5 +40,7 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario,Long> {
 
    @Query(name = "Funcionario.ByNome")
    List<Funcionario> findByNomeFuncionario(String nome);
-   
+
+   @Procedure("funcionario_aumento")
+   void funcionarioAumento(Integer aumento);
 }

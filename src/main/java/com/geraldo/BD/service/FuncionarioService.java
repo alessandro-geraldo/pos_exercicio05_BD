@@ -61,4 +61,7 @@ public class FuncionarioService {
     public List<Funcionario> findByNomeFuncionario(String nome){
         return funcionarioRepository.findByNomeFuncionario("%"+nome+"%");
     }
+    public void funcionarioAumento(Integer aumento){
+        funcionarioRepository.funcionarioAumento(aumento);
+    }
 }
