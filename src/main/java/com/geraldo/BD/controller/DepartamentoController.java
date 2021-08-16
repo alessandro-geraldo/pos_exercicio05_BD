@@ -33,4 +33,9 @@ public class DepartamentoController {
     public void deleteDepartamento(@PathVariable Long id){
         departamentoService.deleteDepartamento(id);
     }
+
+    @GetMapping("/first_departamento")
+    public Departamento findFirstDepartamento(){
+       return departamentoService.findFirstDepartamento();
+    }
 }

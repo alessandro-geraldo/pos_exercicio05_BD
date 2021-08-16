@@ -8,6 +8,9 @@ import javax.persistence.*;
 @Table(name = "Funcionario")
 @NamedQuery(name = "Funcionario.byQtdDependentes",
              query = "from Funcionario f where f.qtdDependentes = ?1")
+@NamedNativeQuery(name = "Funcionario.ByNome",
+                  query = "select * from funcionario f where f.nome like ?1",
+                   resultClass = Funcionario.class)
 public class Funcionario {
 
     @Id

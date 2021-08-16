@@ -17,56 +17,67 @@ public class FuncionarioController {
     private FuncionarioService funcionarioService;
 
     @PostMapping
-    public void createFuncinario(@RequestBody Funcionario funcionario){
+    public void createFuncinario(@RequestBody Funcionario funcionario) {
         funcionarioService.createFuncionario(funcionario);
     }
 
     @GetMapping
-    public List<Funcionario> findAll(){
-       return funcionarioService.findAll();
+    public List<Funcionario> findAll() {
+        return funcionarioService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Funcionario> findIdFuncionario(@PathVariable Long id){
+    public Optional<Funcionario> findIdFuncionario(@PathVariable Long id) {
         return funcionarioService.findIdFuncionario(id);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteFuncionario(@PathVariable Long id){
+    public void deleteFuncionario(@PathVariable Long id) {
         funcionarioService.deleteFuncionario(id);
     }
 
     @GetMapping("/nome:{nome}")
-    public Optional<NomeQtdDependentes> findByNome(@PathVariable String nome){
+    public Optional<NomeQtdDependentes> findByNome(@PathVariable String nome) {
         return funcionarioService.findByNome(nome);
     }
+
     @GetMapping("/numero_departamento:{id}")
-    public List<Funcionario> findAllPorDepartamento(@PathVariable Long id){
+    public List<Funcionario> findAllPorDepartamento(@PathVariable Long id) {
         return funcionarioService.findAllPorDepartamento(id);
     }
+
     @GetMapping("/maior_salario")
-    public Funcionario findBySalario(){
+    public Funcionario findBySalario() {
         return funcionarioService.findBySalario();
     }
+
     @GetMapping("/tres_maiores_salarios")
-    public List<NomeSalario> findByTresMaioresSalarios(){
+    public List<NomeSalario> findByTresMaioresSalarios() {
         return funcionarioService.findByTresMaioresSalarios();
     }
+
     @GetMapping("/sem_dependentes")
-    public List<Funcionario> findBySemDependentes(){
+    public List<Funcionario> findBySemDependentes() {
         return funcionarioService.findBySemDependentes();
     }
+
     @GetMapping("/maior_que:{salario}")
-    public List<Funcionario> findBySalarioMaiorQue(@PathVariable Double salario){
+    public List<Funcionario> findBySalarioMaiorQue(@PathVariable Double salario) {
         return funcionarioService.findBySalariomaiorQue(salario);
     }
+
     @GetMapping("/maior_que_qn:{salario}")
-    public List<Funcionario> findBySalarioMaiorQueQueryNative(@PathVariable Double salario){
+    public List<Funcionario> findBySalarioMaiorQueQueryNative(@PathVariable Double salario) {
         return funcionarioService.findBySalariomaiorQueQueryNative(salario);
     }
+
     @GetMapping("/qtdDependentes:{qtd}")
-    public List<Funcionario> findByQtdDependentes(@PathVariable Integer qtd){
+    public List<Funcionario> findByQtdDependentes(@PathVariable Integer qtd) {
         return funcionarioService.findByQtdDependentes(qtd);
     }
 
-
+    @GetMapping("/nome_funcionario:{nome}")
+    public List<Funcionario> findByNomeFuncionario(@PathVariable String nome){
+        return funcionarioService.findByNomeFuncionario(nome);
+    }
 }

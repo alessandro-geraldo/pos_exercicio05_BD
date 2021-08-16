@@ -2,9 +2,11 @@ package com.geraldo.BD.repositories;
 
 import com.geraldo.BD.interfaceProjecao.NomeQtdDependentes;
 import com.geraldo.BD.interfaceProjecao.NomeSalario;
+import com.geraldo.BD.model.Departamento;
 import com.geraldo.BD.model.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,4 +37,8 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario,Long> {
 
    @Query(name = "Funcionario.ByQtdDependentes")
    List<Funcionario> findByQtdDependentes(Integer qtd);
+
+   @Query(name = "Funcionario.ByNome")
+   List<Funcionario> findByNomeFuncionario(String nome);
+   
 }

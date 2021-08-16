@@ -58,4 +58,7 @@ public class FuncionarioService {
     public List<Funcionario> findByQtdDependentes(Integer qtd){
         return funcionarioRepository.findByQtdDependentes(qtd);
     }
+    public List<Funcionario> findByNomeFuncionario(String nome){
+        return funcionarioRepository.findByNomeFuncionario("%"+nome+"%");
+    }
 }

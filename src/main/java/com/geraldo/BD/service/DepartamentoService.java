@@ -25,7 +25,12 @@ public class DepartamentoService {
     public Optional<Departamento> findByIdDepartamento(Long id){
         return departamentoRepository.findById(id);
     }
+
     public void deleteDepartamento(Long id){
         departamentoRepository.deleteById(id);
+    }
+
+    public Departamento findFirstDepartamento(){
+       return departamentoRepository.findFirstByOrderByCadastroAsc();
     }
 }
