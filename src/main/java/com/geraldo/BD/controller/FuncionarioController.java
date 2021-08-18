@@ -84,4 +84,9 @@ public class FuncionarioController {
     public void funcionarioAumento(@PathVariable Integer aumento){
         funcionarioService.funcionarioAumento(aumento);
     }
+    @GetMapping("/funcionarioSemFilhos_departamento:{departamento}")
+    public List<Funcionario> findByFuncionarioPorDepartamentoSemFilhos(@PathVariable Integer departamento){
+       return funcionarioService.findByFuncionarioPorDepartamentoSemDependentes(departamento);
+    }
+
 }

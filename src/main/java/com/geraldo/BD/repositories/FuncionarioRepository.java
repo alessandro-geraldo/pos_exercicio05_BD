@@ -2,11 +2,11 @@ package com.geraldo.BD.repositories;
 
 import com.geraldo.BD.interfaceProjecao.NomeQtdDependentes;
 import com.geraldo.BD.interfaceProjecao.NomeSalario;
-import com.geraldo.BD.model.Departamento;
 import com.geraldo.BD.model.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -43,4 +43,9 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario,Long> {
 
    @Procedure("funcionario_aumento")
    void funcionarioAumento(Integer aumento);
+
+   @Query(value = "select * from funcionario f "
+           + "where f.departamento = :departamento and qtd_dependentes = 0", nativeQuery = true)
+   List<Funcionario> findByFuncionarioPorDepartamentoSemDependentes(
+           @Param("departamento") Integer departamento);
 }

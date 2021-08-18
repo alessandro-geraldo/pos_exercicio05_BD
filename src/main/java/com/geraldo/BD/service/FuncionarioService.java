@@ -64,4 +64,7 @@ public class FuncionarioService {
     public void funcionarioAumento(Integer aumento){
         funcionarioRepository.funcionarioAumento(aumento);
     }
+    public List<Funcionario>  findByFuncionarioPorDepartamentoSemDependentes(Integer departamento){
+       return funcionarioRepository.findByFuncionarioPorDepartamentoSemDependentes(departamento);
+    }
 }
