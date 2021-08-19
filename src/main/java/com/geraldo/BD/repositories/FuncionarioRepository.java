@@ -4,10 +4,12 @@ import com.geraldo.BD.interfaceProjecao.NomeQtdDependentes;
 import com.geraldo.BD.interfaceProjecao.NomeSalario;
 import com.geraldo.BD.model.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,4 +50,18 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario,Long> {
            + "where f.departamento = :departamento and qtd_dependentes = 0", nativeQuery = true)
    List<Funcionario> findByFuncionarioPorDepartamentoSemDependentes(
            @Param("departamento") Integer departamento);
+
+   @Transactional
+   @Modifying
+   @Query(value = "update funcionario set departamento = :novoDepartamento " +
+           "where departamento = :departamentoAtual"
+           ,nativeQuery = true)
+   void trocarFuncionariosDeDepartamento(@Param("departamentoAtual") Integer departamentoAtual,
+                                         @Param("novoDepartamento") Integer novoDepartamento);
+
+   @Transactional
+   @Modifying
+   @Query(value = "delete from funcionario f where f.departamento = :departamento",nativeQuery = true)
+   void deleteTodosFuncionariosDoDepartamento(@Param("departamento")Integer departamento);
 }
+

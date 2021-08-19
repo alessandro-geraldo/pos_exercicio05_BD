@@ -88,5 +88,14 @@ public class FuncionarioController {
     public List<Funcionario> findByFuncionarioPorDepartamentoSemFilhos(@PathVariable Integer departamento){
        return funcionarioService.findByFuncionarioPorDepartamentoSemDependentes(departamento);
     }
+    @PutMapping("/trocaFuncionarioDeDepartamento:{departamentoAtual},{novoDepartamento}")
+    public void trocaFuncionariosDeDepartamento(@PathVariable Integer departamentoAtual,
+                                                @PathVariable Integer novoDepartamento){
+        funcionarioService.trocaFuncionariosDeDepartamento(departamentoAtual,novoDepartamento);
+    }
+    @DeleteMapping("/deletaTodosFuncionariosDoDepartamento:{departamento}")
+    public void deletaTodosFuncionariosDoDepartamento(@PathVariable Integer departamento){
+        funcionarioService.deletaTodosFuncionariosDoDepartamento(departamento);
+    }
 
 }

@@ -67,4 +67,10 @@ public class FuncionarioService {
     public List<Funcionario>  findByFuncionarioPorDepartamentoSemDependentes(Integer departamento){
        return funcionarioRepository.findByFuncionarioPorDepartamentoSemDependentes(departamento);
     }
+    public void trocaFuncionariosDeDepartamento(Integer departamentoAtual,Integer novoDepartamento){
+        funcionarioRepository.trocarFuncionariosDeDepartamento(departamentoAtual,novoDepartamento);
+    }
+    public void deletaTodosFuncionariosDoDepartamento(Integer departeamento){
+        funcionarioRepository.deleteTodosFuncionariosDoDepartamento(departeamento);
+    }
 }
