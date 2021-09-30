@@ -35,3 +35,17 @@ Crie um projeto Java Application (with Maven) a partir dos códigos apresentados
 * Alterar a classe Funcionario e criar uma consulta para listar os funcionários com uma determinada quantidade de dependentes por @NamedQuery.
 * Alterar a classe Funcionario e criar uma consulta para listar os funcionários que contenham em qualquer parte do seu nome um determinado nome por @NamedNativeQuery.
 * Alterar a interface FuncionarioRepository para utilizar a @NamedQuery e @NamedNativeQuery realizadas nas questões 9 e 10 (respectivamente). 
+
+#### 3. Acrescentar no projeto Java Application (with Maven): 
+
+* Uma procedure que aumenta o salário de todos os funcionários em X porcento, onde X é um número inteiro.
+* Uma consulta que lista todos os funcionários de um determinado departamento que não possuam dependentes utilizando parâmetros nomeados.
+* Uma instrução de update que troca todos os funcionários de um determinado departamento para outro departamento utilizando a anotação @Modifying.
+* Uma instrução de delete que exclui todos os funcionários de um determinado departamento utilizando a anotação @Modifying.
+
+## Tecnologias utilizadas
+
+* Springboot
+* Banco de dados PostgreSQL
+* Postman
+
