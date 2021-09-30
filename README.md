@@ -10,14 +10,7 @@ departamento.
 
 #### 1. Utilizando o cenário:
 
-Para a situação apresentada abaixo, faça o seguinte:
-
-Em uma determinada empresa, todo departamento tem um código numérico e um nome.
-Todos os funcionários da empresa são cadastrados com seu código, nome, quantidade de dependentes, salário e cargo.
-Cada funcionário está lotado em somente um departamento.
-
-Crie um projeto Java Application (with Maven) a partir dos códigos apresentados nos tópicos:
-
+* Crie um projeto Java Application (with Maven) a partir dos códigos apresentados nos tópicos:
 * Configuração do Spring Data JPA;
 * Lidando com Entidades; e
 * Repositórios.
